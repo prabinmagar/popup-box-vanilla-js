@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.05rem;
+    min-height: 100vh;
+    flex-direction: column;
+}
+#popup-btn{
+    background: #fcb941;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    font-family: inherit;
+    padding: 0.8rem 0;
+    width: 180px;
+    cursor: pointer;
+    border: 2px solid #fcb941;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+}
+#popup-btn:hover, #popup-btn:focus{
+    background: #fff;
+    color: #fcb941;
+    outline: 0;
+}
+#popup-btn span{
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+#popup-btn:hover span{
+    margin-left: 0.4rem;
+}
+
+.popup-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3));
+}
+.popup-grid{
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    max-width: 1200px;
+    height: 640px;
+    width: 100%;
+    margin: 0 2rem;
+    position: relative;
+    box-shadow: 0 0 25px -3px rgba(125, 125, 125, 1);
+    animation-name: popup;
+    animation-duration: 1s;
+}
+
+@keyframes popup{
+    from{
+        transform: scale(0);
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+}
+    to{
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+}
+
+/* popup toggle class */
+.togglePopup{
+    display: none;
+}
+
+.popup-right{
+    background: url('img/food-img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#close-btn{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.6rem;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+
+#close-btn:hover,
+#close-btn:focus{
+    background: #000;
+    color: #fff;
+    outline: 0;
+}
+
+/* popup left */
+.popup-left{
+    padding: 0 5rem;
+}
+.popup-left-content{
+    text-align: center;
+}
+.popup-left-content h2{
+    color: rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+.popup-left-content h1{
+    margin: 0.8rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+.popup-left-content h1 span{
+    color: #fcb941;
+}
+.popup-left-content p{
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+    padding-bottom: 0.75rem;
+}
+.form-element{
+    margin: 1.4rem;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+}
+.form-element input{
+    width: 100%;
+    font-family: inherit;
+}
+.form-element input[type = "submit"]{
+    width: 100px;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border: none;
+    padding: 0.85rem 0;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    cursor: pointer;
+}
+.form-element input[type = "submit"]:hover,
+.form-element input[type = "submit"]:focus{
+    background: #fcb941;
+    outline: 0;
+}
+.form-element input[type = "email"]{
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+}
+.form-element input[type = "email"]:focus{
+    outline: 0;
+}
+.popup-left a{
+    text-transform: uppercase;
+    margin-top: 3rem;
+    display: block;
+    letter-spacing: 3px;
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+}
+.popup-left a small{
+    font-size: 1rem;
+}
+
+@media(max-width: 992px){
+    .popup-grid{
+        grid-template-columns: 100%;
+    }
+    .popup-right{
+        display: none;
+    }
+    #close-btn{
+        background-color: rgba(252, 185, 65, 0.7);
+        color: #fff;
+    }
+}
